@@ -24,7 +24,9 @@ const Main = () => {
           <Outlet />
         </Col>
         <Col lg={3}>
-          <RightNavBar />
+          <div className="sticky-top">
+            <RightNavBar />
+          </div>
         </Col>
       </Row>
       <Footer />
