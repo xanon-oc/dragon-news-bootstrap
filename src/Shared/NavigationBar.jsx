@@ -7,7 +7,7 @@ const NavigationBar = () => {
   const { user } = useContext(AuthContext);
   //   const [user, setUser] = useState(null);
   return (
-    <Navbar bg="light" variant="light" className="mb-3">
+    <Navbar bg="light" variant="light" className="mb-3 rounded">
       <Container>
         <Nav className="mx-auto navigation-bar">
           <NavLink to="/categories/0">Home</NavLink>

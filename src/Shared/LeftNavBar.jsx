@@ -12,7 +12,7 @@ const LeftNavBar = () => {
       });
   }, []);
   return (
-    <div>
+    <div className="pt-5">
       {categories.map((a) => (
         <p key={a.id}>
           <NavLink className="left-nav" to={`/categories/${a.id}`}>

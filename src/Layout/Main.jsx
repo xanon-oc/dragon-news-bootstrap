@@ -11,10 +11,14 @@ const Main = () => {
   return (
     <Container>
       <Header />
-      <NavigationBar />
+      <div className="sticky-top">
+        <NavigationBar />
+      </div>
       <Row>
         <Col lg={3}>
-          <LeftNavBar />
+          <div className="sticky-top">
+            <LeftNavBar />
+          </div>
         </Col>
         <Col lg={6}>
           <Outlet />
