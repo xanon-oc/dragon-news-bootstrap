@@ -1,0 +1,23 @@
+.moto {
+  font-weight: 400;
+  font-size: 18px;
+  color: #706f6f;
+}
+.navigation-bar a {
+  text-decoration: none;
+  font-weight: 400;
+  font-size: 18px;
+  color: #706f6f;
+  margin-right: 15px;
+}
+
+.active {
+  color: #dc3545 !important;
+}
+
+.left-nav {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  color: #9f9f9f;
+}
