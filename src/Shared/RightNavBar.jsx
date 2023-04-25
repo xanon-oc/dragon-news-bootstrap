@@ -3,8 +3,19 @@ import { FaFacebook, FaGithub, FaInstagram, FaTwitter } from "react-icons/fa";
 import { AuthContext } from "../Providers/AuthProviders";
 import { ListGroup } from "react-bootstrap";
 const RightNavBar = () => {
-  const { user } = useContext(AuthContext);
-
+  const [error, setError] = useState("");
+  const { user, handleGoogleSignIn, setUser } = useContext(AuthContext);
+  const signInWithGoogle = () => {
+    handleGoogleSignIn()
+      .then((result) => {
+        const loggedUser = result.user;
+        setUser(loggedUser);
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
   return (
     <>
       {!user && (
@@ -12,6 +23,7 @@ const RightNavBar = () => {
           <h6>Login With</h6>
           <div>
             <button
+              onClick={() => signInWithGoogle()}
               style={{ width: "90%", marginBottom: "10px" }}
               className="button"
             >

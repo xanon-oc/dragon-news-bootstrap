@@ -1,10 +1,22 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import Footer from "../Shared/Footer";
+import { Outlet } from "react-router-dom";
+import NavigationBar from "../Shared/NavigationBar";
 
 const LoginSignUp = () => {
   return (
-    <div>
-      <h2>This is the login and signup layout</h2>
-    </div>
+    <Container>
+      <div className="sticky-top">
+        <NavigationBar />
+      </div>
+      <Row>
+        <Col lg={12}>
+          <Outlet />
+        </Col>
+      </Row>
+      <Footer />
+    </Container>
   );
 };
 

@@ -2,10 +2,13 @@ import logo from "../assets/logo.png";
 import moment from "moment";
 import Marquee from "react-fast-marquee";
 import { Button } from "react-bootstrap";
+import { Link } from "react-router-dom";
 const Header = () => {
   return (
     <div className="text-center mt-4 mb-4">
-      <img src={logo} alt="" />
+      <Link to="/">
+        <img src={logo} alt="" />
+      </Link>
       <p className="mt-2 moto">
         <small>Journalism Without Fear or Favour</small>
       </p>
