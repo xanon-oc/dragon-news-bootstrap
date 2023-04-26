@@ -4,12 +4,28 @@ import { AuthContext } from "../Providers/AuthProviders";
 import { ListGroup } from "react-bootstrap";
 const RightNavBar = () => {
   const [error, setError] = useState("");
-  const { user, handleGoogleSignIn, setUser } = useContext(AuthContext);
+  const { user, handleGoogleSignIn, handleGitHubLogin, setUser, setPic } =
+    useContext(AuthContext);
   const signInWithGoogle = () => {
     handleGoogleSignIn()
       .then((result) => {
         const loggedUser = result.user;
         setUser(loggedUser);
+        setPic(loggedUser.photoURL);
+        console.log(loggedUser);
+        setError("");
+      })
+      .catch((error) => {
+        setError(error.message);
+      });
+  };
+  const signInWithGitHub = () => {
+    handleGitHubLogin()
+      .then((result) => {
+        const loggedUser = result.user;
+        setUser(loggedUser);
+        setPic(loggedUser.photoURL);
+        console.log(loggedUser);
         setError("");
       })
       .catch((error) => {
@@ -51,7 +67,11 @@ const RightNavBar = () => {
               </svg>
               Continue with Google
             </button>
-            <button style={{ width: "90%" }} className="button">
+            <button
+              onClick={() => signInWithGitHub()}
+              style={{ width: "90%" }}
+              className="button"
+            >
               <FaGithub style={{ width: "24px" }} />
               Continue with GitHub
             </button>

@@ -9,6 +9,7 @@ import SignUp from "../components/SignUp";
 import LoginSignUp from "../Layout/LoginSignUp";
 import NewsDetails from "../Layout/NewsDetails";
 import News from "../components/News";
+import PrivateRoute from "../SecureRoute/PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -61,7 +62,11 @@ const router = createBrowserRouter([
       },
       {
         path: "/career",
-        element: <Career />,
+        element: (
+          <PrivateRoute>
+            <Career />
+          </PrivateRoute>
+        ),
       },
     ],
   },
